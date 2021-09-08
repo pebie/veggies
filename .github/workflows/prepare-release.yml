@@ -1,0 +1,47 @@
+name: Create  tag and push release
+
+on:
+  workflow_dispatch:
+    inputs:
+      strategy:
+        description: Valid semver number <x.x.x> or strategy <patch, minor, major>
+        default: "patch"
+        required: false
+
+jobs:
+  pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Bump the version using input strategy
+        run: yarn version ${{ github.event.inputs.strategy }}
+
+      - name: Update changelog    
+        id: changelog
+        run: |
+          yarn install
+          CHANGELOG=$(yarn conventional-changelog -p conventionalcommits -r -u 0)
+          echo -e "${CHANGELOG}\n\n\n\n$(cat CHANGELOG.md)" > CHANGELOG.md
+          BODY=$(echo -e "${CHANGELOG}" | sed -e "1,2d")
+          echo "::set-output name=body::$(echo -e "${BODY}")"
+
+      - name: Get version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.github_token }}
+          branch: "release/${{ steps.package-version.outputs.current-version}}"
+          title: "[Release] ${{ steps.package-version.outputs.current-version}}"
+          body: ${{ steps.changelog.outputs.body}}
+          committer: "Veggies Bot <noreply@github.com>"
+          commit-message: "chore(release): bump version to ${{ steps.package-version.outputs.current-version}}"
+          labels: release
+          delete-branch: true
+          base: master
