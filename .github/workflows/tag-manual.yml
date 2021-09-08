@@ -1,0 +1,41 @@
+name: Create  tag and push release
+
+on:
+  workflow_dispatch:
+    inputs:
+      strategy:
+        description: Valid semver number <x.x.x> or strategy <patch, minor, major>
+        default: "patch"
+        required: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Bump the version using input strategy
+        run: yarn version ${{ github.event.inputs.strategy }}
+
+      - name: Update changelog    
+        id: changelog
+        run: |
+          yarn install
+          CHANGELOG=$(yarn conventional-changelog -p conventionalcommits -r -u 0)
+          echo -e "${CHANGELOG}\n\n\n\n$(cat CHANGELOG.md)" > CHANGELOG.md
+          BODY=$(echo -e "${CHANGELOG}" | sed -e "1,2d")
+          echo "::set-output name=body::$(echo -e "${BODY}")"
+
+      - name: Get version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+
+      - name: Create tag
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git tag -a v${{ steps.package-version.outputs.current-version}} -m "Release v${{ steps.package-version.outputs.current-version}}"
+          git push origin v${{ steps.package-version.outputs.current-version}}
