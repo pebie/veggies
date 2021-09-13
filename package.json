@@ -1,6 +1,6 @@
 {
   "name": "@ekino/veggies",
-  "version": "0.8.0",
+  "version": "1.0.1",
   "description": "Veggies is an awesome cucumberjs library for API/CLI testing. Great for testing APIs built upon Express, Koa, HAPI, Loopback and others. It's also the perfect companion for testing CLI applications built with commander, meow & Co.",
   "tags": [
     "bdd",
@@ -29,6 +29,7 @@
   "engineStrict": true,
   "dependencies": {
     "chai": "4.3",
+    "conventional-changelog": "^3.1.24",
     "fs-extra": "10.0",
     "glob": "7.1",
     "jest-diff": "27.0",
