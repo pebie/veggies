@@ -1,3 +1,9 @@
+## <small>1.1.1 (2022-01-11)</small>
+
+* feat(release): add release actions ([2511e7d](https://github.com/ekino/veggies/commit/2511e7d))
+
+
+
 ## 1.1.0 (2021-11-26)
 
 * chore: changelog script should not override previous versions ([8012b47](https://github.com/ekino/veggies/commit/8012b47))
