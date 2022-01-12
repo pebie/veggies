@@ -6,6 +6,13 @@
 
 
 
+## [1.2.0](https://github.com/pebie/veggies/compare/v1.1.0...v1.2.0) (2022-01-12)
+
+
+### Features
+
+* **release:** add release actions ([2101312](https://github.com/pebie/veggies/commit/2101312c2137a89eed08b7a12191d1ad2513b8fd))
+
 ## 1.0.1 (2021-09-16)
 
 * feat(cliWrapper): wrap the cucumber CLI to keep the use of custom options ([e0fa4f9](https://github.com/ekino/veggies/commit/e0fa4f9))
