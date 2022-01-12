@@ -1,0 +1,11 @@
+name: Create a release
+on:
+  workflow_dispatch:
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        with:
+          initial-version: 1.1.0
+          release-type: "node"
