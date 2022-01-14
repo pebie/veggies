@@ -1,3 +1,13 @@
+## <small>1.1.2 (2022-01-14)</small>
+
+* chore(bump): release v1.1.1 ([ebdad23](https://github.com/ekino/veggies/commit/ebdad23))
+* feat(feat): lalalaalal ([65b10e1](https://github.com/ekino/veggies/commit/65b10e1))
+* feat(test): coucou ([c142ed7](https://github.com/ekino/veggies/commit/c142ed7))
+* ci(release): add release actions ([838d598](https://github.com/ekino/veggies/commit/838d598))
+* ci(test): toto ([ee31750](https://github.com/ekino/veggies/commit/ee31750))
+
+
+
 ## <small>1.1.1 (2022-01-14)</small>
 
 * feat(feat): lalalaalal ([65b10e1](https://github.com/ekino/veggies/commit/65b10e1))
