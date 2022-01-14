@@ -1,3 +1,10 @@
+## 1.2.0 (2022-01-14)
+
+* chore(bump): release v1.1.1 ([13837b4](https://github.com/ekino/veggies/commit/13837b4))
+* ci(release): add release actions ([838d598](https://github.com/ekino/veggies/commit/838d598))
+
+
+
 ## <small>1.1.1 (2022-01-14)</small>
 
 * ci(release): add release actions ([838d598](https://github.com/ekino/veggies/commit/838d598))
