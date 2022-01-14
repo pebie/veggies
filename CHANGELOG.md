@@ -1,3 +1,12 @@
+## <small>1.1.1 (2022-01-14)</small>
+
+* feat(feat): lalalaalal ([65b10e1](https://github.com/ekino/veggies/commit/65b10e1))
+* feat(test): coucou ([c142ed7](https://github.com/ekino/veggies/commit/c142ed7))
+* ci(release): add release actions ([838d598](https://github.com/ekino/veggies/commit/838d598))
+* ci(test): toto ([ee31750](https://github.com/ekino/veggies/commit/ee31750))
+
+
+
 ## 1.1.0 (2021-11-26)
 
 * chore: changelog script should not override previous versions ([8012b47](https://github.com/ekino/veggies/commit/8012b47))
