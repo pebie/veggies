@@ -1,3 +1,12 @@
+## 1.2.0 (2022-01-14)
+
+* fix(release): fix changelog output to be multiline ([c510aa4](https://github.com/ekino/veggies/commit/c510aa4))
+* fix(release): fix publish step by configuring npmrc ([7fa350d](https://github.com/ekino/veggies/commit/7fa350d))
+* chore(bump): release v1.1.1 ([4f31a2e](https://github.com/ekino/veggies/commit/4f31a2e))
+* ci(release): add release actions ([838d598](https://github.com/ekino/veggies/commit/838d598))
+
+
+
 ## <small>1.1.1 (2022-01-14)</small>
 
 * fix(release): fix publish step by configuring npmrc ([7fa350d](https://github.com/ekino/veggies/commit/7fa350d))
